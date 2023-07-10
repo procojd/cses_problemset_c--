@@ -10,13 +10,15 @@ typedef long long ll;
 int main(){
     int n;
     cin>>n;
-    int ans;
-    if(n%10>4)
+    int ans=0;
+    int d=5;
+    while((n/d)>0)
     {
-        ans=n/5+1;
+        
+        ans+=(n/d);
+        d*=5;
 
     }
-    ans=n/5;
     cout<<ans;
     return 0;
 }
