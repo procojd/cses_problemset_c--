@@ -18,32 +18,19 @@ int main(){
     cin>>v[i];
     }
     sort(v.begin(),v.end());
-    int j=1;
-   
     int count=0;
-    if(v[j]>=m)
+   int i=0,j=n-1;
+   while(i<=j){
+    if(v[i]+v[j]<=m)
     {
-        cout<<n;
-        return 0;
+        i++;j--;
+        count++;
     }
-    int i=0;
-    while(j<n)
-    {
-        if(v[i]+v[j]<=m)
-        {
-            count++;
-            i+=2;
-            j+=2;
-        }
-        else{
-            count++;
-            i++;
-            j++;
-        }
+    else{
+        count++;j--;
+    }
 
-    }
-    if(i==n-1)
-    count++;
-    cout<<count;
+   }
+   cout<<count;
 
 }
